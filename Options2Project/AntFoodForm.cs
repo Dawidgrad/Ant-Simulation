@@ -190,10 +190,8 @@ namespace SOFT152Steering
                 // Clear panel
                 backgroundGraphics.Clear(Color.White);
 
-
                 // Draw every element of food list
                 mainBrush = new SolidBrush(Color.PowderBlue);
-
                 DrawFood(backgroundGraphics, mainBrush);
                 
 

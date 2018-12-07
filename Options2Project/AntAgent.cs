@@ -21,8 +21,8 @@ namespace SOFT152Steering
         private SOFT152Vector agentPosition;  
 
         /// <summary>
-        /// used in conjunction with the Wander() method
-        /// to detemin the next position an agent should be in 
+        /// Used in conjunction with the Wander() method
+        /// to detemine the next position an agent should be in 
         /// Should remain a private field and do not edit within this class
         /// </summary>
         private SOFT152Vector wanderPosition;
@@ -123,7 +123,7 @@ namespace SOFT152Steering
 
         public AntAgent(SOFT152Vector position, Random random)
         {
-           agentPosition = new SOFT152Vector(position.X, position.Y);
+            agentPosition = new SOFT152Vector(position.X, position.Y);
 
             randomNumberGenerator = random;
 
@@ -150,15 +150,10 @@ namespace SOFT152Steering
             wanderPosition = new SOFT152Vector();
 
             ApproachRadius = 10;
-
             AvoidDistance = 25;
-
             AgentSpeed = 1.0;
-
             ShouldStayInWorldBounds = true;
-
             WanderLimits = 0.5;
-
             IsCarryingFood = false;
         }
 
@@ -282,7 +277,7 @@ namespace SOFT152Steering
         {
             int randomNumber;
 
-            // Get random value from 0 to 1000
+            // Get random value from 0 to 500
             randomNumber = randomGenerator.Next(0, 500);
 
             // If this value equals 0 or 1 forget coordinates 
@@ -305,7 +300,6 @@ namespace SOFT152Steering
         /// </summary>
         public static void AntInformationExchange(AntAgent[] antArray)
         {
-            // Counters
             int i = 0;
             int j = 0;
 
@@ -318,7 +312,7 @@ namespace SOFT152Steering
                     // Skip comparing ants that have already exchanged information
                     if (j > i)
                     {
-                        //If the ants are close to each other
+                        // If the ants are close to each other
                         if (IsWithinRectangleDistance(anotherAnt.AgentPosition, ant.AgentPosition, 6.0f, 6.0f) == true)
                         {
                             // If one of the ants knows nest position, exchange it
@@ -378,8 +372,7 @@ namespace SOFT152Steering
             {
                 isWithinRange = false;
             }
-
-            // Return result
+            
             return isWithinRange;
         }
 
